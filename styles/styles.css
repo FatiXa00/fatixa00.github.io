@@ -594,117 +594,75 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Hero Section Mobile */
     .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-        padding: 2rem 1rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 20px;
+        gap: 1rem;
     }
 
-    .hero-text {
-        order: 2;
-    }
-
-    .hero-image {
-        order: 1;
-    }
-    
-    .hero-image img {
-        width: 250px;
-        height: 250px;
-        margin: 0 auto;
-    }
-    
-    .nav {
-        padding: 15px;
-    }
-    
-    .nav-links {
-        display: none;
-    }
-    
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .section-title {
-        font-size: 2.25rem;
-        margin-bottom: 2rem;
-    }
-
-    .skills-container,
-    .projects-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem;
-    }
-
-    .project-card,
-    .skill-card {
-        padding: 1.25rem;
-    }
-
-    .project-card:hover,
-    .skill-card:hover {
-        transform: translateY(-3px);
-    }
-}
-
-@media (max-width: 480px) {
     .hero-title {
-        font-size: 2.25rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        padding-left: 10px;
     }
-    
-    .hero-subtitle {
+
+    .typing-text {
+        font-size: 1rem;
+        line-height: 1.4;
+        padding: 0 10px;
+        /* Pour que le texte passe à la ligne correctement */
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .hero-description {
         font-size: 1.1rem;
-    }
-    
-    .section-title {
-        font-size: 1.75rem;
-    }
-    
-    .contact-form {
-        padding: 1.25rem;
+        line-height: 1.4;
+        padding: 0 10px;
+        margin: 10px 0;
     }
 
-    .main-container {
-        padding: 0 15px;
-    }
-
-    .project-card,
-    .skill-card {
-        padding: 1rem;
-    }
-
-    input, textarea {
-        padding: 0.75rem;
+    .hero-buttons {
+        padding-left: 10px;
+        gap: 12px;
+        margin-top: 15px;
     }
 
     .btn {
-        padding: 0.75rem 1.5rem;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .hero-image {
+        width: 180px;
+        height: 280px;
+        border-radius: 50%;
+        margin: 20px 0 0 10px ;
+        align-self: flex-start;
+
     }
 }
 
-/* Touch Device Optimizations */
-@media (hover: none) {
-    .project-card:hover,
-    .skill-card:hover,
-    .nav-link:hover::after {
-        transform: none;
+/* Ajustements pour très petits écrans */
+@media screen and (max-width: 300px) {
+    .hero-title {
+        font-size: 1.5rem;
+        padding-left: -1px; /* Ajoute un padding à gauche pour le texte */
+
     }
-    
-    .nav-link {
-        padding: 0.5rem 0;
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
     }
-    
-    .btn:active {
-        transform: scale(0.98);
+
+    .btn {
+        width: 80%;
+        margin: 5px 0;
     }
 }
 
@@ -1144,110 +1102,5 @@ textarea {
     
     .contact-form {
         padding: 20px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .skills-container,
-    .projects-container {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .skill-card,
-    .project-card {
-        padding: 1.5rem;
-    }
-}
-
-/* ======================================================= */
-/* Responsive Design - Media Queries (Definitive Mobile Fix) */
-/* ======================================================= */
-
-@media (max-width: 768px) {
-    .section {
-        padding: 60px 20px;
-    }
-
-    .main-container {
-        padding: 0 20px;
-    }
-    
-    .nav {
-        padding: 15px 20px;
-    }
-    .nav-links {
-        display: none;
-    }
-
-    /* --- HERO SECTION MOBILE FIX --- */
-    .hero {
-        /* This is the key change. 'dvh' respects the browser's UI (address bar). */
-        min-height: 100dvh; /* Dynamic Viewport Height for modern mobile */
-        min-height: -webkit-fill-available; /* Fallback for older iOS Safari */
-
-        /* This ensures perfect centering */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 0; /* Remove top padding as flexbox will center it */
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-        padding: 2rem 0; /* Only vertical padding */
-        width: 100%; /* Ensure it takes full width of parent */
-    }
-    .hero-text {
-        order: 2;
-    }
-    .hero-image {
-        order: 1;
-    }
-    .hero-image img {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-    }
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    .hero-subtitle, .hero-description {
-        font-size: 1rem;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    /* --- OTHER SECTIONS ON MOBILE --- */
-    .section h2 {
-        font-size: 2rem;
-    }
-    .skills-container,
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-    .project-card-container {
-        height: auto;
-        min-height: 480px;
-    }
-    .project-card-front {
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-container {
-        padding: 0 15px;
-    }
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    .btn {
-        padding: 12px 24px;
-        font-size: 0.9rem;
     }
 }
