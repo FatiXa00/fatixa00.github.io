@@ -486,12 +486,6 @@ body {
   background-color: var(--accent-secondary);
 }
 
-
-
-
-
-
-
 .project-card-container:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
@@ -592,59 +586,75 @@ body {
         padding: 1.5rem;
     }
 }
-
+ 
 @media (max-width: 768px) {
     /* Hero Section Mobile */
-    .hero-content {
+  .hero-content {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 60px 20px;
+        flex-direction: column-reverse; /* image puis texte */
+        align-items: center; /* centre tout horizontalement */
+        padding: 20px;
         gap: 1rem;
+        text-align: center; /* centre le texte */
+    }
+    
+    .hero-image {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+         overflow: hidden;
+         display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;   /* ✅ garde l’image entière sans zoom */
+        display: block;
     }
 
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        justify-content: center;
+        padding-left: -10px; /* Ajoute un padding à gauche pour le texte */
+    }
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         line-height: 1.2;
-        margin-bottom: 0.5rem;
-        padding-left: 10px;
+        margin: 10px 27px 5px 0;
+        width: auto; /* Ajustez la largeur selon vos besoins */
     }
 
     .typing-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.4;
-        padding: 0 10px;
-        /* Pour que le texte passe à la ligne correctement */
-        white-space: normal;
-        word-wrap: break-word;
+        margin: 10px 30px 5px 0;
     }
 
     .hero-description {
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.4;
-        padding: 0 10px;
-        margin: 10px 0;
-    }
-
+        margin: 10px 30px 5px 0;
+        max-width: 100%;}
+ 
+    
     .hero-buttons {
-        padding-left: 10px;
+        display: flex;
         gap: 12px;
         margin-top: 15px;
+        margin-left: -20px; /* Ajoute un padding à gauche pour les boutons */
     }
 
     .btn {
-        padding: 10px 20px;
+        padding: 12px 25px;
         font-size: 0.9rem;
+        width: 168px;
     }
-
-    .hero-image {
-        width: 180px;
-        height: 280px;
-        border-radius: 50%;
-        margin: 20px 0 0 10px ;
-        align-self: flex-start;
-
-    }
+   
 }
 
 /* Ajustements pour très petits écrans */
